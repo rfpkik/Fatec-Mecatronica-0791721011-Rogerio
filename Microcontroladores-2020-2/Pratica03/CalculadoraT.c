@@ -45,7 +45,7 @@ void realizarSeno(){
   scanf("%f", &angulo);
   angulo = angulo * M_PI/180;
   seno_angulo = sin(angulo);
-  printf("Valor do seno: %f\n", seno_angulo);
+  printf("Valor do seno: %.2f\n", seno_angulo);
 
 }
 
