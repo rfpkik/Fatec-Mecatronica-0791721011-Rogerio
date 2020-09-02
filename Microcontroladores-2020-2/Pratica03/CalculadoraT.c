@@ -35,6 +35,7 @@ void menu(){
   printf("3 - Multiplicacao\n");
   printf("4 - Divisao\n");
   printf("5 - Seno\n");
+  printf("6 - Cosseno\n");
   printf("0 - Sair\n");
   printf("Sua Escolha:");
 }
@@ -46,6 +47,16 @@ void realizarSeno(){
   angulo = angulo * M_PI/180;
   seno_angulo = sin(angulo);
   printf("Valor do seno: %.2f\n", seno_angulo);
+
+}
+
+void realizarCosseno(){
+  float angulo, cosseno_angulo;
+  printf("Informe um angulo:");
+  scanf("%f", &angulo);
+  angulo = angulo * M_PI/180;
+  cosseno_angulo = cos(angulo);
+  printf("Valor do cossseno: %.2f\n", cosseno_angulo);
 
 }
 
@@ -73,6 +84,7 @@ int main(void) {
       case 3: realizarMultiplicacao(); break;
       case 5: realizarSeno(); break;
       case 4: realizarDivisao(); break;
+      case 6: realizarCosseno(); break;
       case 0:
         ligado = 0;
         break;
