@@ -9,7 +9,6 @@ void realizarSoma(){
   resultado = valor1 + valor2;
   printf("Resultado: %.3f\n", resultado);
 }
-
 void realizarMultiplicacao(){
   float valor1, valor2, resultado;
   printf("Multiplicacao\n");
@@ -18,7 +17,6 @@ void realizarMultiplicacao(){
   resultado = valor1 * valor2;
   printf("Resultado: %.3f\n", resultado);
 }
-
 void realizarSubtracao(){
   float valor1, valor2, resultado;
   printf("SUBTRACAO\n");
@@ -27,7 +25,6 @@ void realizarSubtracao(){
   resultado = valor1 - valor2;
   printf("Resultado: %.3f\n", resultado);
 }
-
 void menu(){
   printf("Nossa Calculadora!\n");
   printf("1 - Soma\n");
@@ -39,7 +36,6 @@ void menu(){
   printf("0 - Sair\n");
   printf("Sua Escolha:");
 }
-
 void realizarSeno(){
   float angulo, seno_angulo;
   printf("Informe um angulo:");
@@ -47,9 +43,7 @@ void realizarSeno(){
   angulo = angulo * M_PI/180;
   seno_angulo = sin(angulo);
   printf("Valor do seno: %.2f\n", seno_angulo);
-
 }
-
 void realizarCosseno(){
   float angulo, cosseno_angulo;
   printf("Informe um angulo:");
@@ -57,9 +51,7 @@ void realizarCosseno(){
   angulo = angulo * M_PI/180;
   cosseno_angulo = cos(angulo);
   printf("Valor do cossseno: %.2f\n", cosseno_angulo);
-
 }
-
 void realizarDivisao(){
   float numero1, numero2, resultado;
   printf("Informe dois numeros:");
@@ -69,7 +61,6 @@ void realizarDivisao(){
     printf("Resultado: %.3f\n", resultado);
   } else printf("Tentativa de divisão por zero!\n");
 }
-
 int main(void) {
   int operacao;
   int ligado = 0;
