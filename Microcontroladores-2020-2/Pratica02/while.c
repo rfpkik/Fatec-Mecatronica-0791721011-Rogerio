@@ -10,7 +10,6 @@ resultado = valor1 + valor2;
 printf("Resultado: %.3f\n", resultado);
 }
 
-
 void realizarSubtracao(){
 float valor1, valor2, resultado;
 printf("SUBTRACAO\n");
@@ -20,14 +19,12 @@ resultado = valor1 - valor2;
 printf("Resultado: %.3f\n", resultado);
 }
 
-
 int main(void) {
 int operacao;
 int ligado = 1;
 while(ligado == 1){
 printf("Informe a operacao desejada:");
 scanf("%i", &operacao);
-
 
 switch(operacao){
 case 1: realizarSoma(); break;
@@ -49,7 +46,6 @@ printf("Operacao Invalida!\n");
 break;
 }
 }
-
 
 return 0;
 }
