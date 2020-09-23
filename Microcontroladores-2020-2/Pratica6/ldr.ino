@@ -62,9 +62,10 @@ void calculaExibeQuantidadeLux(){
   //Calcula a resistencia do ldr
   float r_ldr = (5 - v_resistor) / i_circuito;
   //Determina o valor em lux
-  float lux = 1.25e7 * pow(r_ldr, -1.4059);
+  float lux = (1.25e7) * (1/pow(r_ldr, 1.4059));
   //Exibe o valor em lux
-  Serial.println(lux);
+  Serial.println(lux, DEC);
+  
 }
 
 void setup() {
