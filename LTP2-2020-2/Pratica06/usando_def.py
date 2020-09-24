@@ -1,4 +1,6 @@
 #Revisão dos conceitos de lista
+
+#Lista com funções
 def exibirStatusLista(lista):
   valor_medio = sum(lista) / len(lista)
   maior_valor = max(lista)
