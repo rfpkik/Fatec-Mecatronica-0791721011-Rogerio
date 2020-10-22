@@ -15,7 +15,3 @@ while contador < quantidade_de_personagens:
     print("Classe de personagem invalida!")
   print(personagens)
   
-print("porcentagens relativas:")
-for categoria in personagens.keys():
-  porcentagem = len(personagens[categoria]) / quantidade_de_personagens
-  print("categoria:", categoria, " - ", porcentagem * 100)
