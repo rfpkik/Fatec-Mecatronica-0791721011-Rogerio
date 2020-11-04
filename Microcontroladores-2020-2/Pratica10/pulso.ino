@@ -1,7 +1,7 @@
 /*
 Programa para trabalhar com a comunicação serial
 */
-
+//constantes
 const int LED_LIGADO = LOW;
 const int LED_DESLIGADO = HIGH;
 const int ENTRADA_ACIONADA = LOW;
@@ -14,6 +14,7 @@ const int ENTRADA_02 = D2;
 
 //Variáveis globais
 char msg[30];
+//Variavel utilizada com o millis()
 unsigned long tempoAnterior;
 //Indica que a variável será utilizada dentro de uma interrupção
 volatile unsigned long total_de_pulsos = 0;
@@ -24,22 +25,25 @@ void ICACHE_RAM_ATTR conta_pulsos(){
 }
 
 void inicializa_hardware(){
+ //saidas
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
   digitalWrite(LED1, LED_DESLIGADO);
   digitalWrite(LED2, LED_DESLIGADO);
   digitalWrite(LED3, LED_DESLIGADO);
+  //entradas
   pinMode(ENTRADA_01, INPUT_PULLUP);
   pinMode(ENTRADA_02, INPUT_PULLUP);
   
-  //Configura a interrupção externa
+  //Configura a interrupção externa ligando-a
   attachInterrupt(digitalPinToInterrupt(ENTRADA_01), conta_pulsos,FALLING);
   
   //Inicializar a comunicação
   Serial.begin(115200); //9600, 19200, 38400, 115200
 }
 
+//estrutura do arduino...
 void setup() {
   inicializa_hardware();
   //Inicializa as variáveis globais
@@ -50,7 +54,6 @@ void setup() {
   total_de_pulsos = 0;
 }
 
-
 void loop() {
   //Verifica se o tempo desejado ja passou
   if(millis() - tempoAnterior >= 1000){
@@ -58,6 +61,7 @@ void loop() {
     tempoAnterior = millis();
     //Mostra o total de pulsos na porta serial
     sprintf(msg, "Total de Pulsos: %i\n", total_de_pulsos);
+    //coloca o resultado na porta serial
     Serial.print(msg);
     //Reinicia a contagem de pulsos
     total_de_pulsos = 0;
