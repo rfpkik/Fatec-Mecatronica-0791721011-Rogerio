@@ -62,5 +62,5 @@ void loop() {
     //Reinicia a contagem de pulsos
     total_de_pulsos = 0;
   }
-  
+   
 }
